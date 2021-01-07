@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Montserrat:wght@300;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Merriweather:ital,wght@1,300&display=swap");
+.u-margin-bottom-small {
+  margin-bottom: 2rem; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem; }
+
+.u-center-text {
+  text-align: center; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  padding: 1rem;
+  background-color: #eee; }
+
+.section-team {
+  padding-bottom: 2rem; }
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 100rem; }
+
+.heading {
+  text-align: center;
+  padding: 1rem; }
+  .heading__title {
+    font-size: 4rem;
+    background-image: #366c75;
+    background-image: linear-gradient(to right, #7fd386, #3eb5a9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+    letter-spacing: 0.5rem;
+    word-spacing: 1rem;
+    font-family: "Lato", Helvetica, sans-serif;
+    text-transform: uppercase; }
+  .heading__line {
+    border: none;
+    max-width: 50rem;
+    border-radius: 1rem;
+    background-color: #366c75;
+    height: 0.6rem;
+    margin-top: -2rem; }
+
+.team__cards {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; }
+
+.card {
+  background-color: white;
+  margin: 2rem 1rem;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+  max-width: 40rem;
+  border-top: 0.5rem solid #366c75;
+  transition: 0.4s all;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .card__img {
+    width: 50%;
+    border-radius: 50%;
+    margin-top: 3.5rem; }
+  .card__name {
+    font-family: "Lato", Helvetica, sans-serif;
+    font-size: 3.1rem;
+    margin: 1rem 0 0.5rem;
+    color: #366c75; }
+  .card__title {
+    font-family: "Lato", Helvetica, sans-serif;
+    text-align: center;
+    font-size: 2.4rem;
+    padding: 0 1rem;
+    font-weight: 700; }
+  .card__bio {
+    padding: 1rem 3rem;
+    font-family: "Lato", Helvetica, sans-serif;
+    font-size: 2.4rem;
+    text-align: center;
+    min-height: 20rem; }
+  .card__contact {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    outline: 0.1rem solid grey;
+    text-align: center; }
+    .card__contact a {
+      transition: 0.3s all; }
+    .card__contact a:hover {
+      background-color: grey; }
+    .card__contact-icon {
+      width: 30%;
+      padding: 2rem; }
+  .card:hover {
+    transform: translateY(-2rem) scale(1.02); }
