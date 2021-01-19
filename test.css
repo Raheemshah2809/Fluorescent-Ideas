@@ -1,0 +1,39 @@
+.testimonial-slider {
+    list-style:none;
+    position:relative;
+  }
+  
+  .testimonial-slider li {
+    background-color;
+    margin-bottom:10px;
+    color:black;
+    width:100%;
+    -webkit-animation: fadeinout 5s linear forwards;
+    animation: fadeinout 5s linear forwards;
+    opacity: 0;
+  }
+  @-webkit-keyframes fadeinout {
+    50% { opacity: 1; }
+  }
+  
+  @keyframes fadeinout {
+    50% { opacity: 1; }
+  }
+  .testimonial-slider li .selected {
+    display:auto;
+  }
+  
+  .testimonial-slider li:not(.selected) {
+    display:none;
+  }
+  
+  .testimonial-slider li .source::before {
+    content: '- ';
+  }
+  .a1b1 {
+    color: black;
+    text-align: center;
+    font-size: 50px;
+    font-family: Roboto;
+  }
+  
