@@ -39,12 +39,7 @@ body {
   padding: 1rem; }
   .heading__title {
     font-size: 4rem;
-    background-image: #366c75;
-    background-image: linear-gradient(to right, #7fd386, #3eb5a9);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    color: transparent;
+    color: #000;
     letter-spacing: 0.5rem;
     word-spacing: 1rem;
     font-family: "Lato", Helvetica, sans-serif;
