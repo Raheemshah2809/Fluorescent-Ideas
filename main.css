@@ -439,3 +439,11 @@ $navy: rgba(22, 54, 112, 1);
 */
 
 
+.reviews-parallax{
+ background-color: black;
+}
+
+.reviewt1{
+  color: whitesmoke;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

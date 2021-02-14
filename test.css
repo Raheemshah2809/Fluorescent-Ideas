@@ -1,16 +1,18 @@
 .testimonial-slider {
     list-style:none;
     position:relative;
-  }
-  
+      top: 500px;
+      right: 28px;
+    } 
   .testimonial-slider li {
     background-color;
     margin-bottom:10px;
-    color:black;
+    color:red;
     width:100%;
     -webkit-animation: fadeinout 5s linear forwards;
     animation: fadeinout 5s linear forwards;
     opacity: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   @-webkit-keyframes fadeinout {
     50% { opacity: 1; }
@@ -31,9 +33,9 @@
     content: '- ';
   }
   .a1b1 {
-    color: black;
+    color: red;
     text-align: center;
     font-size: 50px;
-    font-family: Roboto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
