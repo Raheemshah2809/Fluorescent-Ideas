@@ -29,8 +29,7 @@
     display:none;
   }
   
-  .testimonial-slider li .source::before {
-    content: '- ';
+  e    content: '- ';
   }
   .a1b1 {
     color: red;
