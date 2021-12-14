@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head id="#top">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- =====BOX ICONS===== -->
@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
 
 
-  <!-- ===== CSS ===== -->
   <link rel="stylesheet" href="assets/css/styles.css">
 
   <title>FLUORESCENT IDEAS</title>
@@ -44,42 +43,128 @@
         </div>
 
         <ul class="nav__list">
-          <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
-          <li class="nav__item"><a href="404.html" class="nav__link">About</a></li>
-          <li class="nav__item"><a href="#skills" class="nav__link">Clients</a></li>
-          <li class="nav__item"><a href="#contact" class="nav__link">Blog</a></li>
-          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+          <li class="nav__item"><a href="#top" class="nav__link active">Home</a></li>
+          <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="#clients" class="nav__link">Clients</a></li>
+          <li class="nav__item"><a href="#blog" class="nav__link">Blog</a></li>
+          <li class="nav__item"><a href="#Contact" class="nav__link">Contact</a></li>
         </ul>
       </div>
     </nav>
   </header>
+  <!--===== HOME =====-->
+  <section class="home" id="home" style="height: 100vh">
+    <div class="home__container bd-grid">
 
-  <main class="l-main">
-    <!--===== HOME =====-->
-    <section class="home" id="home">
-      <div class="home__container bd-grid">
+      <div class="home__data">
+        <h1 class="home__title">FLUORESCENT<br>IDEAS</h1>
+        <p class="home__description">Where We Create Websites and Applications<br>For Anyone</p>
+        <a href="#Contact" class="home__button">Get Started</a>
+      </div>
+    </div>
+  </section>
+  <section>
 
-        <div class="home__data">
-          <h1 class="home__title">FLUORESCENT<br>IDEAS</h1>
-          <p class="home__description">A New Website<br>Coming Soon</p>
-          <a href="404.html" class="home__button">Get Started</a>
-          <br>
-          <br>
-          <p class="home__description">Version 2.0.1</p>
-          <p class="home__description">Changelog for pull request
-            <br>
-            What's New!
-            <br>
-            2.0.1 - Updated Design
-            <br>
-            2.0.2 - Dark Mode (Not Yet Released)
-          </p>
+  </section>
 
+  <section class="about full-height" id="about" >
+    <div class="about__container bd-grid">
+      <div class="about__data">
+        <h2 class="about__title">About</h2>
+        <p class="about__description">
+          We are a webdesign company that specializes in creating websites and applications for any purpose.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about full-height" id="clients" >
+    <div class="about__container bd-grid">
+      <div class="about__data">
+        <h2 class="about__title">Clients</h2>
+        <p class="about__description">
+          These are some of the clients we have worked with, and the projects we have worked on.
+        </p>
+        <div class="work__container bd-grid">
+          <a href="https://nabzcutz.com/" target="blank" class="work__img">
+            <img src="assets/img/thebooth.png" loading="lazy" alt="">
+            <span class="desc">The Booth</span>
+          </a>
+          <a href="https://tonisdeli.co.uk/" target="blank" class="work__img">
+            <img src="assets/img/tonis.png" loading="lazy" alt="">
+            <span class="desc">Toni's Deli</span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.fluorescentideas.relaxv2" target="blank"
+            class="work__img">
+            <img src="assets/img/relaxapp.png" loading="lazy" alt="">
+            <span class="desc">Relax Android App</span>
+          </a>
+          <a href="https://raheemshah2809.github.io/The-Student-Marketplace/" target="blank" class="work__img">
+            <img src="assets/img/studentmarketplace.png" loading="lazy" alt="">
+            <span class="desc">The Student Marketplace</span>
+          </a>
+
+          <a href="https://raheemshah2809.github.io/api-coursework/" target="blank" class="work__img">
+            <img src="assets/img/apicoursework.png" loading="lazy" alt="">
+            <span class="desc">API Coursework</span>
+          </a>
+          <a href="diceout.html" target="_blank" class="work__img">
+            <img src="assets/img/diceout.png" loading="lazy" target="blank" alt="">
+            <span class="desc">Dice Out Game</span>
+          </a>
         </div>
-      </div>/
-    </section>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="about full-height" id="Contact" >
+    <div class="about__container bd-grid">
+      <div class="about__data">
+        <h2 class="about__title">Contact Us</h2>
+        <p class="about__description">
+          Contact Us For More Information
+        </p>
+        <p class="skills__text">Please Allow 1 Working Day For A Reply, Thank you.</p>
+        <div class="contact__container bd-grid">
+          <form action="https://formspree.io/f/xjvjqepe" method="POST">
+            <input type="text" placeholder="Name" class="contact__input">
+            <input type="mail" name="_replyto" placeholder="Email" class="contact__input">
+            <textarea class="contact__input" placeholder="Message" name="message"></textarea>
+            <button class="contact__button button" type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
   </main>
+
+  <footer class="footer">
+    <div class="footer__container bd-grid">
+      <div class="footer__data">
+        <p class="footer__copyright">
+          &copy; FLUORESCENT IDEAS Copyright 2022 <span id="year"></span>
+        </p>
+        <p class="footer__text">
+          Created and Owned by Raheem Shah
+        </p>
+        <p class="footer__text">
+          Version 2.0
+        </p>
+          
+      </div>
+          <div class="footer__social">
+            <a href="404.html" class="footer__social-item"><i class='bx bxl-linkedin-square'></i></a>
+            <a href="404.html" class="footer__social-item"><i class='bx bxl-facebook-square'></i></a>
+            <a href="404.html" class="footer__social-item"><i class='bx bxl-twitter-square'></i></a>
+            <a href="404.html" class="footer__social-item"><i class='bx bxl-instagram'></i></a>
+          </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+  </footer>
+
   <!--===== GSAP =====-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 
