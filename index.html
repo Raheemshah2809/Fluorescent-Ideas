@@ -7,6 +7,10 @@
   <!-- =====BOX ICONS===== -->
   <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://static.fontawesome.com/css/fontawesome-app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+
 
 
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -58,6 +62,7 @@
 
       <div class="home__data">
         <h1 class="home__title">FLUORESCENT<br>IDEAS</h1>
+        <p class="home__description">New Site Coming:<br>2023</p>
         <p class="home__description">Where We Create Websites and Applications<br>For Anyone</p>
         <a href="#Contact" class="home__button">Get Started</a>
       </div>
@@ -67,7 +72,7 @@
 
   </section>
 
-  <section class="about full-height" id="about" >
+  <section class="about full-height" id="about">
     <div class="about__container bd-grid">
       <div class="about__data">
         <h2 class="about__title">About</h2>
@@ -78,47 +83,81 @@
     </div>
   </section>
 
-  <section class="about full-height" id="clients" >
+  <section class="about full-height" id="clients">
     <div class="about__container bd-grid">
       <div class="about__data">
         <h2 class="about__title">Clients</h2>
-        <p class="about__description">
-          These are some of the clients we have worked with, and the projects we have worked on.
-        </p>
-        <div class="work__container bd-grid">
-          <a href="https://nabzcutz.com/" target="blank" class="work__img">
-            <img src="assets/img/thebooth.png" loading="lazy" alt="">
-            <span class="desc">The Booth</span>
-          </a>
-          <a href="https://tonisdeli.co.uk/" target="blank" class="work__img">
-            <img src="assets/img/tonis.png" loading="lazy" alt="">
-            <span class="desc">Toni's Deli</span>
-          </a>
-          <a href="https://play.google.com/store/apps/details?id=com.fluorescentideas.relaxv2" target="blank"
-            class="work__img">
-            <img src="assets/img/relaxapp.png" loading="lazy" alt="">
-            <span class="desc">Relax Android App</span>
-          </a>
-          <a href="https://raheemshah2809.github.io/The-Student-Marketplace/" target="blank" class="work__img">
-            <img src="assets/img/studentmarketplace.png" loading="lazy" alt="">
-            <span class="desc">The Student Marketplace</span>
-          </a>
+        <div class="general-container">
+          <input class="radio" type="radio" name="card" id="card-1" checked />
+          <label class="content" for="card-1">
+            <span class="icon">
+              <i class="fas fa-sun"></i>
+            </span>
+            <h3 class="card-title">
+              The Booth
+              <!-- <span class="subtitle">@hed</span> -->
+            </h3>
+          </label>
+          <input class="radio" type="radio" name="card" id="card-2" />
+          <label class="content" for="card-2">
+            <span class="icon">
+              <i class="fas fa-cloud-rain"></i>
+            </span>
+            <h3 class="card-title">
+              Toni's Deli
+              <!-- <span class="subtitle">@lolaguti</span> -->
+            </h3>
+          </label>
+          <input class="radio" type="radio" name="card" id="card-3" />
+          <label class="content" for="card-3">
+            <span class="icon">
+              <i class="fas fa-cloud-moon"></i>
+            </span>
+            <h3 class="card-title">
+              Relax Android App
 
-          <a href="https://raheemshah2809.github.io/api-coursework/" target="blank" class="work__img">
-            <img src="assets/img/apicoursework.png" loading="lazy" alt="">
-            <span class="desc">API Coursework</span>
-          </a>
-          <a href="diceout.html" target="_blank" class="work__img">
-            <img src="assets/img/diceout.png" loading="lazy" target="blank" alt="">
-            <span class="desc">Dice Out Game</span>
-          </a>
+            </h3>
+          </label>
         </div>
+
       </div>
     </div>
   </section>
-  
+  <div class="general-container">
+    <input class="radio" type="radio" name="card" id="card-4" checked />
+    <label class="content" for="card-4">
+      <span class="icon">
+        <i class="fas fa-sun"></i>
+      </span>
+      <h3 class="card-title">
+        Serra da Freita, Vale de Cambra, Portugal
+        <span class="subtitle">@hed</span>
+      </h3>
+    </label>
+    <input class="radio" type="radio" name="card" id="card-5" />
+    <label class="content" for="card-5">
+      <span class="icon">
+        <i class="fas fa-cloud-rain"></i>
+      </span>
+      <h3 class="card-title">
+        París, Paris, France
+        <span class="subtitle">@lolaguti</span>
+      </h3>
+    </label>
+    <input class="radio" type="radio" name="card" id="card-6" />
+    <label class="content" for="card-6">
+      <span class="icon">
+        <i class="fas fa-cloud-moon"></i>
+      </span>
+      <h3 class="card-title">
+        La Joue du Loup, Le Dévoluy, France
+        <span class="subtitle">@quentindrphotography</span>
+      </h3>
+    </label>
+  </div>
 
-  <section class="about full-height" id="Contact" >
+
+  <section class="about full-height" id="Contact">
     <div class="about__container bd-grid">
       <div class="about__data">
         <h2 class="about__title">Contact Us</h2>
@@ -152,19 +191,15 @@
         <p class="footer__text">
           Version 2.0
         </p>
-          
+
       </div>
-          <div class="footer__social">
-            <a href="404.html" class="footer__social-item"><i class='bx bxl-linkedin-square'></i></a>
-            <a href="404.html" class="footer__social-item"><i class='bx bxl-facebook-square'></i></a>
-            <a href="404.html" class="footer__social-item"><i class='bx bxl-twitter-square'></i></a>
-            <a href="404.html" class="footer__social-item"><i class='bx bxl-instagram'></i></a>
-          </div>
+      <div class="footer__social">
+        <a href="404.html" class="footer__social-item"><i class='bx bxl-linkedin-square'></i></a>
+        <a href="404.html" class="footer__social-item"><i class='bx bxl-facebook-square'></i></a>
+        <a href="404.html" class="footer__social-item"><i class='bx bxl-twitter-square'></i></a>
+        <a href="404.html" class="footer__social-item"><i class='bx bxl-instagram'></i></a>
+      </div>
   </footer>
-
-  <script src="assets/js/script.js"></script>
-  </footer>
-
   <!--===== GSAP =====-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 
