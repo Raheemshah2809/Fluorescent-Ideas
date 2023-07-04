@@ -406,32 +406,3 @@ $('.nav-items a').on('click', function () {
 }
 
 
-var video = document.getElementById('video-bg');
-
-  function handlePowerStatus() {
-    // Check if the device is on low power
-    if (navigator.getBattery) {
-      navigator.getBattery().then(function (battery) {
-        if (battery.level < 0.2) {
-          // Pause the video
-          video.pause();
-        } else {
-          // Autoplay the video
-          video.play();
-        }
-      });
-    } else {
-      // If battery status is not available, autoplay the video
-      video.play();
-    }
-  }
-
-  // Add event listeners for the video and power status changes
-  video.addEventListener('ended', function () {
-    video.currentTime = 0;
-    video.play();
-  });
-
-  window.addEventListener('load', handlePowerStatus);
-  window.addEventListener('visibilitychange', handlePowerStatus);
-  window.addEventListener('blur', handlePowerStatus);
