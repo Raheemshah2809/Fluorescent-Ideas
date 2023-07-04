@@ -57,12 +57,27 @@ h1 {
   position: absolute;  /* position this element absolutely... */
   top: 50%;  /* ...at the middle of the container... */
   left: 50%;  /* ...centered horizontally as well */
-  font-size: 9vw;
+  font-size: 8vw;
   line-height: 1em;
   font-weight: 900;
   transform: translate(-50%, -50%);  /* shift the element back by half of its own width and height to center it */
   text-align: center;
 }
+
+@media screen and (min-width: 767px) {
+  .hero-title {
+    position: absolute;  /* position this element absolutely... */
+    top: 50%;  /* ...at the middle of the container... */
+    left: 50%;  /* ...centered horizontally as well */
+    font-size: 6vw;
+    line-height: 1em;
+    font-weight: 900;
+    transform: translate(-50%, -50%);  /* shift the element back by half of its own width and height to center it */
+    text-align: center;
+  }
+}
+  
+
 
 .nav-title {
   font-size: 4em;
