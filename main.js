@@ -1,195 +1,406 @@
-$(".carousel").carousel({
-  interval: 12000
+$("#nav-btn").on("click", function () {
+  $("#takeover-nav").toggleClass("shown");
+  $(".sticky-nav").toggleClass("difference");
 });
 
-if ($("#1" ).hasClass( "active" )) {
-    $('.navbar-brand').addClass("red");
+///Initiation Variables
+var icon_1 = document.getElementById("nav-btn");
+var topLine_1 = document.getElementById("top-line-1");
+var middleLine_1 = document.getElementById("middle-line-1");
+var bottomLine_1 = document.getElementById("bottom-line-1");
+var state_1 = "menu"; // can be "menu" or "arrow"
+var topLineY_1;
+var middleLineY_1;
+var bottomLineY_1;
+var topLeftY_1;
+var topRightY_1;
+var bottomLeftY_1;
+var bottomRightY_1;
+var topLeftX_1;
+var topRightX_1;
+var bottomLeftX_1;
+var bottomRightX_1;
+
+///Animation Variables
+var segmentDuration_1 = 15;
+var menuDisappearDurationInFrames_1 = segmentDuration_1;
+var arrowAppearDurationInFrames_1 = segmentDuration_1;
+var arrowDisappearDurationInFrames_1 = segmentDuration_1;
+var menuAppearDurationInFrames_1 = segmentDuration_1;
+var menuDisappearComplete_1 = false;
+var arrowAppearComplete_1 = false;
+var arrowDisappearComplete_1 = false;
+var menuAppearComplete_1 = false;
+var currentFrame_1 = 1;
+
+///Menu Disappear
+function menuDisappearAnimation_1() {
+  currentFrame_1++;
+  if (currentFrame_1 <= menuDisappearDurationInFrames_1) {
+    window.requestAnimationFrame(() => {
+      //top line
+      topLineY_1 = AJS.easeInBack(
+        37,
+        50,
+        menuDisappearDurationInFrames_1,
+        currentFrame_1
+      );
+      topLine_1.setAttribute("d", "M30," + topLineY_1 + " L70," + topLineY_1);
+      //bottom line
+      bottomLineY_1 = AJS.easeInBack(
+        63,
+        50,
+        menuDisappearDurationInFrames_1,
+        currentFrame_1
+      );
+      bottomLine_1.setAttribute(
+        "d",
+        "M30," + bottomLineY_1 + " L70," + bottomLineY_1
+      );
+      //recursion
+      menuDisappearAnimation_1();
+    });
+  } else {
+    middleLine_1.style.opacity = "0";
+    currentFrame_1 = 1;
+    menuDisappearComplete_1 = true;
+    openMenuAnimation_1();
+  }
 }
 
+///Cross Appear
+function arrowAppearAnimation_1() {
+  currentFrame_1++;
+  if (currentFrame_1 <= arrowAppearDurationInFrames_1) {
+    window.requestAnimationFrame(() => {
+      //top line
+      topLeftX_1 = AJS.easeOutBack(
+        30,
+        35,
+        arrowAppearDurationInFrames_1,
+        currentFrame_1
+      );
+      topLeftY_1 = AJS.easeOutBack(
+        50,
+        35,
+        arrowAppearDurationInFrames_1,
+        currentFrame_1
+      );
+      bottomRightX_1 = AJS.easeOutBack(
+        70,
+        65,
+        arrowAppearDurationInFrames_1,
+        currentFrame_1
+      );
+      bottomRightY_1 = AJS.easeOutBack(
+        50,
+        65,
+        arrowAppearDurationInFrames_1,
+        currentFrame_1
+      );
+      topLine_1.setAttribute(
+        "d",
+        "M" +
+          topLeftX_1 +
+          "," +
+          topLeftY_1 +
+          " L" +
+          bottomRightX_1 +
+          "," +
+          bottomRightY_1
+      );
+      //bottom line
+      bottomLeftX_1 = AJS.easeOutBack(
+        30,
+        35,
+        arrowAppearDurationInFrames_1,
+        currentFrame_1
+      );
+      bottomLeftY_1 = AJS.easeOutBack(
+        50,
+        65,
+        arrowAppearDurationInFrames_1,
+        currentFrame_1
+      );
+      topRightX_1 = AJS.easeOutBack(
+        70,
+        65,
+        arrowAppearDurationInFrames_1,
+        currentFrame_1
+      );
+      topRightY_1 = AJS.easeOutBack(
+        50,
+        35,
+        arrowAppearDurationInFrames_1,
+        currentFrame_1
+      );
+      bottomLine_1.setAttribute(
+        "d",
+        "M" +
+          bottomLeftX_1 +
+          "," +
+          bottomLeftY_1 +
+          " L" +
+          topRightX_1 +
+          "," +
+          topRightY_1
+      );
+      //recursion
+      arrowAppearAnimation_1();
+    });
+  } else {
+    currentFrame_1 = 1;
+    arrowAppearComplete_1 = true;
+    openMenuAnimation_1();
+  }
+}
 
-$("#bg").on("slide.bs.carousel", function(ev) {
-  var id = ev.relatedTarget.id;
-  switch (id) {
-    case "1":
-      if ($(".navbar-brand").is(".pinkbar")) {
-        $(".navbar-brand").removeClass("pinkbar");
-      }
-      if ($(".navbar-brand").is(".redbar")) {
-        $(".navbar-brand").removeClass("redbar");
-      }
-      $(".navbar-brand").addClass("greenbar");
-      break;
-    case "2":
-      if ($(".navbar-brand").is(".greenbar")) {
-        $(".navbar-brand").removeClass("greenbar");
-      }
-      if ($(".navbar-brand").is(".bluebar")) {
-        $(".navbar-brand").removeClass("bluebar");
-      }
-      $(".navbar-brand").addClass("pinkbar");
-      break;
-    case "3":
-      if ($(".navbar-brand").is(".pinkbar")) {
-        $(".navbar-brand").removeClass("pinkbar");
-      }
-      if ($(".navbar-brand").is(".navybar")) {
-        $(".navbar-brand").removeClass("navybar");
-      }
-      $(".navbar-brand").addClass("bluebar");
-      break;
-    case "4":
-      if ($(".navbar-brand").is(".bluebar")) {
-        $(".navbar-brand").removeClass("bluebar");
-      }
-      if ($(".navbar-brand").is(".redbar")) {
-        $(".navbar-brand").removeClass("redbar");
-      }
-      $(".navbar-brand").addClass("navybar");
-      break;
-    case "5":
-      if ($(".navbar-brand").is(".navybar")) {
-        $(".navbar-brand").removeClass("navybar");
-      }
-      if ($(".navbar-brand").is(".greenbar")) {
-        $(".navbar-brand").removeClass("greenbar");
-      }
-      $(".navbar-brand").addClass("redbar");
-      break;
-    // default:
-    //   $(".navbar-brand").addClass("greenbar");
+///Combined Open Menu Animation
+function openMenuAnimation_1() {
+  if (!menuDisappearComplete_1) {
+    menuDisappearAnimation_1();
+  } else if (!arrowAppearComplete_1) {
+    arrowAppearAnimation_1();
+  }
+}
+
+///Cross Disappear
+function arrowDisappearAnimation_1() {
+  currentFrame_1++;
+  if (currentFrame_1 <= arrowDisappearDurationInFrames_1) {
+    window.requestAnimationFrame(() => {
+      //top line
+      topLeftX_1 = AJS.easeInBack(
+        35,
+        30,
+        arrowDisappearDurationInFrames_1,
+        currentFrame_1
+      );
+      topLeftY_1 = AJS.easeInBack(
+        35,
+        50,
+        arrowDisappearDurationInFrames_1,
+        currentFrame_1
+      );
+      bottomRightX_1 = AJS.easeInBack(
+        65,
+        70,
+        arrowDisappearDurationInFrames_1,
+        currentFrame_1
+      );
+      bottomRightY_1 = AJS.easeInBack(
+        65,
+        50,
+        arrowDisappearDurationInFrames_1,
+        currentFrame_1
+      );
+      topLine_1.setAttribute(
+        "d",
+        "M" +
+          topLeftX_1 +
+          "," +
+          topLeftY_1 +
+          " L" +
+          bottomRightX_1 +
+          "," +
+          bottomRightY_1
+      );
+      //bottom line
+      bottomLeftX_1 = AJS.easeInBack(
+        35,
+        30,
+        arrowDisappearDurationInFrames_1,
+        currentFrame_1
+      );
+      bottomLeftY_1 = AJS.easeInBack(
+        65,
+        50,
+        arrowDisappearDurationInFrames_1,
+        currentFrame_1
+      );
+      topRightX_1 = AJS.easeInBack(
+        65,
+        70,
+        arrowDisappearDurationInFrames_1,
+        currentFrame_1
+      );
+      topRightY_1 = AJS.easeInBack(
+        35,
+        50,
+        arrowDisappearDurationInFrames_1,
+        currentFrame_1
+      );
+      bottomLine_1.setAttribute(
+        "d",
+        "M" +
+          bottomLeftX_1 +
+          "," +
+          bottomLeftY_1 +
+          " L" +
+          topRightX_1 +
+          "," +
+          topRightY_1
+      );
+      //recursion
+      arrowDisappearAnimation_1();
+    });
+  } else {
+    middleLine_1.style.opacity = "1";
+    currentFrame_1 = 1;
+    arrowDisappearComplete_1 = true;
+    closeMenuAnimation_1();
+  }
+}
+
+///Menu Appear
+function menuAppearAnimation_1() {
+  currentFrame_1++;
+  if (currentFrame_1 <= menuAppearDurationInFrames_1) {
+    window.requestAnimationFrame(() => {
+      //top line
+      topLineY_1 = AJS.easeOutBack(
+        50,
+        37,
+        menuDisappearDurationInFrames_1,
+        currentFrame_1
+      );
+      topLine_1.setAttribute("d", "M30," + topLineY_1 + " L70," + topLineY_1);
+      //bottom line
+      bottomLineY_1 = AJS.easeOutBack(
+        50,
+        63,
+        menuDisappearDurationInFrames_1,
+        currentFrame_1
+      );
+      bottomLine_1.setAttribute(
+        "d",
+        "M30," + bottomLineY_1 + " L70," + bottomLineY_1
+      );
+      //recursion
+      menuAppearAnimation_1();
+    });
+  } else {
+    currentFrame_1 = 1;
+    menuAppearComplete_1 = true;
+    closeMenuAnimation_1();
+  }
+}
+
+///Close Menu Animation
+function closeMenuAnimation_1() {
+  if (!arrowDisappearComplete_1) {
+    arrowDisappearAnimation_1();
+  } else if (!menuAppearComplete_1) {
+    menuAppearAnimation_1();
+  }
+}
+
+///Events
+icon_1.addEventListener("click", () => {
+  if (state_1 === "menu") {
+    openMenuAnimation_1();
+    state_1 = "arrow";
+    arrowDisappearComplete_1 = false;
+    menuAppearComplete_1 = false;
+  } else if (state_1 === "arrow") {
+    closeMenuAnimation_1();
+    state_1 = "menu";
+    menuDisappearComplete_1 = false;
+    arrowAppearComplete_1 = false;
   }
 });
 
-/*
-Notes
-- Square around name for brand?
-- Trans/light white navbar
-- Circle gradient, top darker?
-*/
+// Cursor
+document.addEventListener("DOMContentLoaded", function (event) {
+  var cursor = document.querySelector(".custom-cursor");
+  var links = document.querySelectorAll("a, button, #nav-btn, input.btn");
 
-/*#pinkmodel {
-	background-image: linear-gradient(to bottom left, $transparent 0, $pink 80% ), url(https://s17.postimg.org/50lqy22bj/do-sharp.jpg);
-	background-size: cover;
-	height: 100%;
-	position: relative;
-}
-*/
+  var initCursor = false;
 
-/* BG and BTN UX */
-/*
-  Bootstrap Carousel Fade Transition (for Bootstrap 3.3.x)
-  CSS from:       http://codepen.io/transportedman/pen/NPWRGq
-  and:            http://stackoverflow.com/questions/18548731/bootstrap-3-carousel-fading-to-new-slide-instead-of-sliding-to-new-slide
-  Inspired from:  http://codepen.io/Rowno/pen/Afykb 
-*/
-/*
-  WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
-  Need to override the 3.3 new styles for modern browsers & apply opacity
-*/
-/* Making Everything Responsive */
+  for (var i = 0; i < links.length; i++) {
+    var selfLink = links[i];
 
-  .navbar {
-    z-index: -1 !important;
-    opacity: 0;
+    selfLink.addEventListener("mouseover", function () {
+      cursor.classList.add("custom-cursor--link");
+    });
+    selfLink.addEventListener("mouseout", function () {
+      cursor.classList.remove("custom-cursor--link");
+    });
   }
-  */
 
-  .navbar {
-    z-index: -1 !important;
-  }
-  */
+  window.onmousemove = function (e) {
+    var mouseX = e.clientX;
+    var mouseY = e.clientY;
 
-  margin-left: -120px !important;
-  margin-top: -300px !important;*/
-
-/* Code Graveyard */
-/*
-Project Details
-
-
-<div class="modal fade" id="sailormoontv" tabindex="-1" role="dialog" aria-labelledby="smtvLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-*/
-
-/*
-
-.visible {
-   animation: appear .5s;
-   animation-fill-mode: both;
-}
-
-.hidden {
-   animation: disappear .5s;
-   animation-fill-mode: both
-} 
-
-@keyframes appear {
-    from {
-        opacity: 0;
+    if (!initCursor) {
+      // cursor.style.opacity = 1;
+      TweenLite.to(cursor, 0.5, {
+        opacity: 1
+      });
+      initCursor = true;
     }
-    to {
-      opacity: 1;  
-      z-index: 4;
+
+    TweenLite.to(cursor, 0, {
+      top: mouseY + "px",
+      left: mouseX + "px"
+    });
+  };
+
+  window.ontouchmove = function (e) {
+    var mouseX = e.touches[0].clientX;
+    var mouseY = e.touches[0].clientY;
+    if (!initCursor) {
+      // cursor.style.opacity = 1;
+      TweenLite.to(cursor, 0.3, {
+        opacity: 1
+      });
+      initCursor = true;
     }
-}
 
-@keyframes disappear {
-    from {
-      opacity: 1;  
-      z-index: 4;
-  }
-    to {
-      opacity: 0;  
-      z-index: -2;
-    }
-}
+    TweenLite.to(cursor, 0, {
+      top: mouseY + "px",
+      left: mouseX + "px"
+    });
+  };
 
-*/
+  window.onmouseout = function (e) {
+    TweenLite.to(cursor, 0.3, {
+      opacity: 0
+    });
+    initCursor = false;
+  };
 
-// On Click Modal
+  window.ontouchstart = function (e) {
+    TweenLite.to(cursor, 0.3, {
+      opacity: 1
+    });
+  };
 
-$('#sailormoontv').on('shown.bs.modal', function (e) {
-	$('#pinkmodel').addClass("visible");
-  $("#bg").carousel('pause');
-});                     
-$('#sailormoontv').on('hidden.bs.modal', function (e) {
-	$('#pinkmodel').removeClass("visible");
-  $('#pinkmodel').addClass("hidden");
-  $("#bg").carousel('cycle');
-});  
-
-
-/*
-.red {
-  margin-bottom: 200px !important;
-  transition-duration: 1s;
-}
-
-*/
-
-/*
-$('#bg').bind('mousewheel', function(e) {
-     if(e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
-        $(this).carousel('next');
-    } else {
-        $(this).carousel('prev');
-    }
+  window.ontouchend = function (e) {
+    setTimeout(function () {
+      TweenLite.to(cursor, 0.3, {
+        opacity: 0
+      });
+    }, 200);
+  };
 });
-*/
 
-/*https://s17.postimg.org/ndn7o0t31/Screen_Shot_2018-01-03_at_9.27.44_PM.png*/
+// Close the navigation menu when a link is clicked
+$('.nav-items a').on('click', function () {
+  // Check if the menu is open
+  if ($('#takeover-nav').hasClass('shown')) {
+    // Close the menu
+    $("#nav-btn").trigger("click");
+  }
+});
+  function redirectToMain() {
+    window.location.href = "home.html";
+  }
+
+
+  function smoothScroll(event, targetId) {
+    event.preventDefault();
+    
+    const targetElement = document.getElementById(targetId);
+    targetElement.scrollIntoView({ behavior: 'smooth' });
+}
