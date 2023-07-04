@@ -21,7 +21,6 @@ body {
 }
 
 h2 {
-    font-size: clamp(1rem, 5vw, 5rem);
     font-weight: 400;
     text-align: center;
     letter-spacing: 5px;
