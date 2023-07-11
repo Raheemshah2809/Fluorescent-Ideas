@@ -384,3 +384,25 @@ section.five {
   }
 }
 
+
+.announcement-bar {
+  background-color: #f8f8f8;
+  color: #333;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 12px;
+
+}
+
+.announcement-bar p {
+  margin: 0;
+}
+
+.announcement-bar a {
+  color: #333;
+  text-decoration: none;
+}
