@@ -83,6 +83,10 @@ h1 {
   font-size: 4em;
 }
 
+.nav-title2 {
+  font-size: 2em;
+}
+
 a {
   transition: all 0.25s ease-in-out;
 }

@@ -1,0 +1,71 @@
+/* Style the 'about-us' section */
+#about-us {
+    background-color: #efefef;
+    /* Set background color */
+    padding: 50px 0;
+    /* Add some padding */
+}
+
+.about-section {
+    text-align: center;
+    /* Center align the content */
+}
+
+.about-img img {
+    max-width: 100%;
+    /* Make sure the image doesn't exceed its container */
+}
+
+.about-content {
+    background-color: #fff;
+    /* Set background color for the content */
+    padding: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    /* Add a subtle box shadow */
+    border-radius: 5px;
+    /* Add rounded corners */
+    text-align: left;
+    /* Align content to the left */
+}
+
+.section-title {
+    font-size: 2em;
+    /* Set the title font size */
+    color: #212121;
+    /* Set the title color */
+    margin-bottom: 20px;
+    /* Add some space below the title */
+}
+
+.about-content h3 {
+    font-size: 1.5em;
+    /* Set the heading font size */
+    color: #00bcd4;
+    /* Set the heading color */
+    margin-top: 20px;
+    /* Add space above each heading */
+}
+
+.about-content p {
+    font-size: 1em;
+    /* Set the paragraph font size */
+    color: #212121;
+    /* Set the paragraph color */
+    margin-bottom: 20px;
+    /* Add space below each paragraph */
+}
+
+/* Responsive styles */
+@media screen and (max-width: 767px) {
+    .about-img {
+        margin-bottom: 20px;
+        /* Add space between image and content on smaller screens */
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .about-content {
+        padding: 20px;
+        /* Reduce padding on smaller screens */
+    }
+}
