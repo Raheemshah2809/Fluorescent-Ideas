@@ -394,7 +394,7 @@ $('.nav-items a').on('click', function () {
   }
 });
   function redirectToMain() {
-    window.location.href = "home.html";
+    window.location.href = "products.html";
   }
 
 
